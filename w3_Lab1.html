@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JavaScript Exercises</title>
+<style type="text/css">
+body {
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:100%;
+	margin:0;
+	padding:0;
+}
+p {
+	color:#900;
+	margin-left:20px;
+}
+div#results {
+	background-color:#FF6;
+	height:auto;
+	width:500px;
+	border:1px solid red;
+	padding:10px;
+	margin-left:20px;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+	border-radius:7px;
+
+}
+div#more {
+	background-color: #39F;
+	height:auto;
+	width:500px;
+	border:1px solid #036;
+	padding:10px;
+	margin-left:20px;
+	margin-top:20px;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+	color:#CF0;
+
+}
+#form1
+{
+	padding: 10px;
+	width: 500px;
+	border-style: solid;
+	border-color: #063;
+	border-radius: 15px;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+	background-color: #CFF;
+	margin:20px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#more').click(function(){
+			var message = "<br>You Clicked!";
+			$('#more').append(message);
+		})
+
+		$('#box1').focus(function(){
+			$(this).css('background-color', 'lightblue');
+		});
+		$('#box1').blur(function(){
+			$(this).css('background-color', 'pink');
+		});
+
+		$('#btn').click(function(){
+			var userInput = $('#box1').val();
+			$('#results').append(userInput);
+		})
+
+		// form hidden on page load
+		$('#form1').hide();
+		$('p#p1').click(function(){
+			$('#form1').show();
+		})
+	});
+</script>
+
+</head>
+
+<body>
+
+<p id="p1"><a href="#">Relay a Message</a></p>
+<p>Second Paragraph</p>
+<form name="form1" id="form1" action="" method="post">
+	<input type="text" id="box1">
+	<input type="button" id="btn" value="Relay a Message">
+</form>
+<div id="results"></div>
+<div id="more">Testing the results</div>
+</body>
+</html>
